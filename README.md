@@ -1,4 +1,4 @@
-# future-of-work-prototype
+# 360-insights
 
 > Jekyll project
 

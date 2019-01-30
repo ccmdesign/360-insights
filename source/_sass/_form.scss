@@ -1,0 +1,108 @@
+.form {
+  input,
+  textarea {
+    webkit-appearance: none;
+    outline: 0;
+    transition: all .4s ease;
+    text-indent: 20px;
+  }
+
+  input[type='text'],
+  input[type='url'],
+  textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 15px 5px;
+    @include breakpoint($small-only) { padding: 10px; }
+    margin-bottom: 10px;
+    margin-top: 20px;
+    border: 0;
+    border-bottom: 1px solid rgba(black, .15);
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 1px;
+
+    &:focus {
+      border-color: $main-color;
+    }
+  }
+
+  input[type='text'].inline {
+    display: inline-block;
+    width: calc(50% - 14px);
+    
+    & + input[type='text'].inline { margin-left: 20px; }
+
+  }
+
+  textarea {
+    height: 234px;
+    resize: none;
+    padding: 20px 5px;
+    border: 1px solid transparent;
+    border-bottom-color: rgba(black, .15);
+
+    &:focus {
+      background-color: rgba($main-color, .05);
+      border-color: $main-color;
+    }
+  }
+
+  fieldset { 
+    border: 0; 
+    padding: 0;
+  }
+
+  h2 {
+    text-align: left;
+    font-weight: 400;
+    font-family: $sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    opacity: .7;
+  }
+
+  header {
+    padding-top: 80px;
+    padding-bottom: 0;
+  }
+
+  .form-body { 
+    padding: 1px 0 40px 0;
+  }
+}
+
+.project-links {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  @include breakpoint($small-only) { 
+    flex-direction: column;
+  }
+
+  input {
+    flex: 1;
+    display: inline-block;
+    width: 100%;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.form-controls { 
+  text-align: right;
+  padding: 0 0 40px 0;
+  
+  .button { 
+    letter-spacing: 1px; 
+    color: $main-color;
+    font-size: 1.3rem;
+    text-align: center;
+    text-indent: 0;
+  }
+}

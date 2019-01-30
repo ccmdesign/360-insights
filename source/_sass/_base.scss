@@ -1,0 +1,76 @@
+@charset "utf-8";html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}ol,ul{list-style-image:none;list-style-position:outside;list-style-type:none}
+ 
+/* Additions for Chrome */
+html,body,ul,ol,blockquote{padding:0; margin:0;}
+ 
+/* Hand Coded by Paul Randall (2009) */
+
+body{padding: 50px;}
+ 
+/* Typography */
+
+h1,h2,h3,h4,h5,h6,a:hover { }
+
+h1 { 
+  font-size: 3rem; 
+  font-weight: 100;
+  line-height: 1.2;
+}
+
+h2 { 
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+h3 { 
+  font-size: 1.5rem; 
+  font-weight: 600;
+}
+
+h4 { 
+  font-size: 1.5rem; 
+  font-weight: normal;
+}
+
+h5 { 
+  font-size: 1.2rem; 
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h6 { 
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+p,ol,ul,table,pre,dd{margin-bottom: 14px;}
+
+ol,ul,blockquote,pre{margin-left: 25px;}
+
+ol,ul{list-style-type:circle; list-style-position:inside;}
+ol ol,ul ul{font-style:italic; margin-bottom:0;}
+ol{list-style-type:decimal;}
+ol ol{list-style-type:lower-latin;}
+
+blockquote{padding: 5px 25px 5px 0; font-style:italic;}
+blockquote p{border-left: 2px solid #eee; padding-left: 25px;}
+
+/* Table Styling */
+
+table{border-top: 1px solid #b4b4b4; border-left: 1px solid #b4b4b4;}
+table th{background: #efefef;}
+table td,table th{border-bottom: 1px solid #b4b4b4; border-right: 1px solid #b4b4b4; padding: 5px 7px;}
+
+/* Definition List */
+dt{
+margin: 0;
+padding: 0;
+font-weight: bold;
+}
+
+dd
+{
+padding: 0;
+}

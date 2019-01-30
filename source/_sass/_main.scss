@@ -1,0 +1,81 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Typography
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+strong { 
+  font-weight: 400; 
+  opacity: .9;
+}
+
+body {
+  font-family: $serif;
+  letter-spacing: .5px;
+  font-size: 16px;
+  line-height: 1.62;
+  color: $main-color;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 999;
+
+  &.js-active { display: block; }
+}
+
+footer {
+  background-color: #333;
+  padding: 20px;
+  text-align: right;
+  font-size: .8rem;
+  
+  a {
+    color: #666;
+    &:hover {
+      color: #fff;
+    } 
+  }
+}
+
+.wrapper {
+  @include breakpoint($touch) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  @include breakpoint($large) {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}

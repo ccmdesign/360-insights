@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-UA-XXXXXXXXX-X');
+    </script>
+
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content="" />
+
+    <title>{{page.title}}</title>
+
+    <link rel="stylesheet" href="{{ '/vendor/sanitize.css' | relative_url}}">
+    <link rel="stylesheet" href="{{ '/css/styles.css' | relative_url}}">
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/XXXX.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body>
+    {{content}}
+    
+    <footer>
+      <a class="by-line" href="http://ccmdesign.ca" target="_blank" title="Website design and development by ccm.design">by ccm.design</a>
+    </footer>
+
+    <script src="{{'/vendor/jquery-2.1.4.min.js' | relative_url}}"></script>
+    <script src="{{'/vendor/isInViewport.min.js' | relative_url}}"></script>
+    <script src="{{'/js/scripts.js' | relative_url}}"></script>
+  </body>
+</html>

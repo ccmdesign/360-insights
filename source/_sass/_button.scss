@@ -1,0 +1,43 @@
+.button {
+  border: 1px solid currentColor;
+  padding: 15px 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  
+  @include breakpoint($small-only) {
+    display: block;
+    padding: 15px 20px;
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: $main-color;
+    color: white;
+  }
+
+  &--negative { color: white; }
+  &--full {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &--attach {
+    text-transform: none;
+  }
+
+  &--clean {
+    border: 0;
+    padding-left: 0;
+    i { 
+      vertical-align: -4px; 
+      margin-right: 10px;
+    }
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}

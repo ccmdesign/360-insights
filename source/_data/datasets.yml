@@ -23,3 +23,53 @@
       records: 190
       dateRange: "Jul '15 - Nov '18"
       amount: "£ 1.1 M+"
+- title: "Quixote Foundation"
+  content:
+    - name: "Quixote Foundation Final Grants List March 2017"
+      records: 696
+      dateRange: "Jun '98 - Oct '17"
+      amount: "£ 20 M+"
+
+- title: "Scottish Council for Voluntary Organisations"
+  content:
+    - name: "SCVO Cyber Essentials grants"
+      records: 50
+      dateRange: "Nov '17 - Jan '19"
+      amount: "£ 48 k+"
+    - name: "SCVO Digital Participation Challenge Fund and Charter Fund grants"
+      records: 150
+      dateRange: "Dec '14 - Aug '18"
+      amount: "£ 1.2 M+"
+    - name: "SCVO Carers Act Transformation Support (CATS) Fund"
+      records: 28
+      dateRange: "Aug '18 - Aug '18"
+      amount: "£ 337 k+"
+    - name: "SCVO Community Capacity & Resilience Fund grants"
+      records: 190
+      dateRange: "Jul '15 - Nov '18"
+      amount: "£ 1.1 M+"
+- title: "Quixote Foundation"
+  content:
+    - name: "Quixote Foundation Final Grants List March 2017"
+      records: 696
+      dateRange: "Jun '98 - Oct '17"
+      amount: "£ 20 M+"
+
+- title: "Scottish Council for Voluntary Organisations"
+  content:
+    - name: "SCVO Cyber Essentials grants"
+      records: 50
+      dateRange: "Nov '17 - Jan '19"
+      amount: "£ 48 k+"
+    - name: "SCVO Digital Participation Challenge Fund and Charter Fund grants"
+      records: 150
+      dateRange: "Dec '14 - Aug '18"
+      amount: "£ 1.2 M+"
+    - name: "SCVO Carers Act Transformation Support (CATS) Fund"
+      records: 28
+      dateRange: "Aug '18 - Aug '18"
+      amount: "£ 337 k+"
+    - name: "SCVO Community Capacity & Resilience Fund grants"
+      records: 190
+      dateRange: "Jul '15 - Nov '18"
+      amount: "£ 1.1 M+"

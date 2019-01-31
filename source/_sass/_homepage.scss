@@ -58,6 +58,67 @@
       padding: 48px 100px 66px 100px;
     }
 
+    &__upload {
+      text-align: center;
+      padding: 32px 0;
+      cursor: pointer;
+
+      .text {
+        font-family: $compact-sans;
+        color: rgba(0, 0, 0, 0.46) !important;
+        font-size: 1.5em;
+        font-weight: 300;
+        letter-spacing: 0.33px;
+        line-height: 22px;
+        padding: 0;
+      }
+
+      &-icon {
+        position: relative;
+        color: #9c1f61 !important;
+        font-family: 'Material Icons' !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+        font-size: 42px !important;
+        line-height: 1 !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        display: inline-block !important;
+        white-space: nowrap !important;
+        word-wrap: normal !important;
+        direction: ltr !important;
+        -webkit-font-feature-settings: 'liga' !important;
+        -webkit-font-smoothing: antialiased !important;
+        padding: 0 16px !important;
+
+        @include breakpoint($large) {
+          &::before, &::after {
+            width: 233%;
+          }
+          &::before {
+            left: -233%;
+          }
+        }
+
+        &::before, &::after {
+          position: absolute;
+          content: '';
+          width: 77%;
+          height: 1px;
+          background-color: #9c1f61;
+          top: 50%;
+        }
+
+        &::after {
+          left: 100%;
+        }
+
+        &::before {
+          left: -77%;
+        }
+      }
+    }
+
     &__zone {
       background-color: #f2f2f2;
       text-align: center;
@@ -68,7 +129,7 @@
         outline: 0;
         cursor: pointer;
         box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.25);
-        padding: 12px 16px 8px 16px;
+        padding: 12px 32px 8px 32px;
         color: #ffffff;
         font-family: $compact-sans;
         font-size: 1.25em;
@@ -251,22 +312,22 @@
       pointer-events: none;
 
       .homepage__data-selection__window {
-        transform: scale(0.97);
+        transform: translateY(32px);
       }
     }
 
     &__window {
+      position: relative;
       width: 100%;
       height: 100%;
-      overflow: auto;
       background-color: #ffffff;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      transition: transform 0.13s ease-in-out;
+      transition: transform 0.15s ease-in-out;
+      padding-bottom: 32px;
 
       @include breakpoint($large) {
-        max-width: 940px;
-        height: auto;
-        max-height: 940px;
+        max-width: 980px;
+        height: 80vh;
       }
     }
 
@@ -287,10 +348,11 @@
       font-family: $compact-sans;
       padding: 16px 10px;
       overflow: auto;
-      max-height: 640px;
+      max-height: calc(100vh - 3.25em - 10px);
 
       @include breakpoint($large) {
         padding: 28px 64px;
+        max-height: calc(80vh - 3.25em - 10px);
       }
     }
 
@@ -368,6 +430,64 @@
             display: inline-block;
           }
         }
+      }
+    }
+
+    &__upload-drop {
+      box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(11, 40, 51, 0.2);
+      background-color: rgba(11, 40, 51, 0.05);
+      margin: 24px 26px;
+      text-align: center;
+      height: 73%;
+      background-image: url('/images/drop-file-background.png');
+      background-repeat: no-repeat;
+      background-size: 25%;
+      background-position: center 16.67%;
+      padding: 54px 134px;
+
+      h4 {
+        font-family: $compact-sans;
+        font-size: 1.5em;
+        font-weight: 400;
+        line-height: 28px;
+        margin: 30px 0;
+      }
+
+      p {
+        color: #000000;
+        font-family: $compact-sans;
+        font-size: 1.125em;
+        font-weight: 300;
+        line-height: 28px;
+      }
+    }
+
+    &__upload-wrapper {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+      padding: 20px 0;
+    }
+
+    &__upload-button {
+      cursor: pointer;
+      background: none;
+      border: 1px solid #9c1f61;
+      outline: 0;
+      padding: 10px 48px 6px 48px;
+      color: #9c1f61;
+      font-family: $compact-sans;
+      font-weight: 400;
+      letter-spacing: 0.33px;
+      line-height: 16px;
+      transition: color 0.13s ease-in-out, background-color 0.13s ease-in-out;
+
+      &:hover {
+        background-color: #9c1f61;
+        color: #ffffff;
       }
     }
   }

@@ -22,7 +22,6 @@ chooseDataSetButton.addEventListener('click', () => {
   utils.lockBody(!utils.isBodyLocked())
 })
 chooseDataSetWindow.addEventListener('click', (e) => {
-  console.log(e.target)
   if (e.target.classList.contains('js-homepage-dataset-selection-window') &&
     !chooseDataSetWindow.classList.contains('hidden')) {
     chooseDataSetWindow.classList.add('hidden')
@@ -32,6 +31,28 @@ chooseDataSetWindow.addEventListener('click', (e) => {
 chooseDataSetCloseButton.addEventListener('click', () => {
   if (!chooseDataSetWindow.classList.contains('hidden')) {
     chooseDataSetWindow.classList.add('hidden')
+    utils.lockBody(false)
+  }
+})
+
+// UPLOAD DATASET
+const uploadDataSetButton = document.getElementsByClassName('js-upload-dataset-btn')[0]
+const uploadDataSetWindow = document.getElementsByClassName('js-homepage-dataset-upload-window')[0]
+const uploadDataSetCloseButton = document.getElementsByClassName('js-homepage-dataset-upload-window-close')[0]
+uploadDataSetButton.addEventListener('click', () => {
+  uploadDataSetWindow.classList.toggle('hidden')
+  utils.lockBody(!utils.isBodyLocked())
+})
+uploadDataSetWindow.addEventListener('click', (e) => {
+  if (e.target.classList.contains('js-homepage-dataset-upload-window') &&
+    !uploadDataSetWindow.classList.contains('hidden')) {
+    uploadDataSetWindow.classList.add('hidden')
+    utils.lockBody(false)
+  }
+})
+uploadDataSetCloseButton.addEventListener('click', () => {
+  if (!uploadDataSetWindow.classList.contains('hidden')) {
+    uploadDataSetWindow.classList.add('hidden')
     utils.lockBody(false)
   }
 })

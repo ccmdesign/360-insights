@@ -1,0 +1,230 @@
+.homepage {
+
+  &__header {
+    @extend .wrapper;
+    padding-top: 34px;
+    padding-bottom: 558px;
+    background-image: url('/images/homepage-header-background.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 40% 75%;
+    font-family: $compact-sans;
+    font-weight: 300;
+
+    @include breakpoint($large) {
+      background-size: 35%;
+      background-position: right 45%;
+      padding-right: 33%;
+      padding-bottom: 186px;
+    }
+
+    h2 {
+      color: #9c1f61;
+      font-size: 1.75em;
+      font-weight: 400;
+      text-transform: uppercase;
+
+      @include breakpoint($large) {
+        font-size: 2.375em;
+      }
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #000000;
+
+      @include breakpoint($large) {
+        font-size: 4em;
+      }
+    }
+
+    p {
+      font-size: 1.25em;
+      line-height: 30px;
+      color: #000000;
+
+      @include breakpoint($large) {
+        font-size: 1.5em;
+        line-height: 34px;
+      }
+    }
+  }
+
+  &__file-selection {
+    background-color: #9c1f61;
+    padding: 24px 4px 36px 4px;
+
+    @include breakpoint($large) {
+      padding: 48px 100px 66px 100px;
+    }
+
+    &__zone {
+      background-color: #f2f2f2;
+      text-align: center;
+
+      button {
+        border: 1px solid #9c1f61;
+        background-color: #9c1f61;
+        outline: 0;
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.25);
+        padding: 12px 16px 8px 16px;
+        color: #ffffff;
+        font-family: $compact-sans;
+        font-size: 1.25em;
+        font-weight: 300;
+        letter-spacing: 0.33px;
+        line-height: 24px;
+        transform: translateY(-50%);
+
+        @include breakpoint($large) {
+          padding: 12px 136px 8px 136px;
+          font-size: 1.5em;
+        }
+      }
+    }
+
+    &__wrapper {
+      @extend .wrapper;
+      background-color: #ffffff;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+      margin-top: -184px;
+
+      p {
+        color: #0b2833;
+        font-family: $compact-sans;
+        font-size: 1.25em;
+        font-weight: 300;
+        letter-spacing: 0.44px;
+        line-height: 30px;
+        padding: 32px 12px;
+        text-align: center;
+
+        @include breakpoint($large) {
+          font-size: 2em;
+          line-height: 44px;
+          padding: 88px 54px;
+        }
+      }
+    }
+  }
+
+  &__data-sources {
+    @extend .wrapper;
+    padding: 32px 4px;
+    text-align: center;
+    font-family: $compact-sans;
+    font-size: 1.25em;
+    font-weight: 300;
+    color: #000000;
+    line-height: 30px;
+
+    @include breakpoint($large) {
+      padding: 58px 220px;
+      font-size: 1.5em;
+      line-height: 34px;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-bottom: 12px;
+      font-size: 1.25em;
+      line-height: 30px;
+
+      @include breakpoint($large) {
+        font-size: 1.5em;
+        line-height: 34px;
+        margin-bottom: 24px;
+      }
+    }
+
+    a {
+      position: relative;
+      color: #f4831f;
+
+      &:hover {
+        color: #f4831f;
+
+        &::after {
+          transform: none;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        top: calc(100% - 4.5px);
+        left: 0;
+        background-color: #f4831f;
+        transition: transform 0.23s ease-in-out;
+        transform-origin: center;
+        transform: scaleX(0);
+      }
+    }
+  }
+
+  &__newsletter {
+    background-color: #f2f4f4;
+    padding: 24px 4px 36px 4px;
+
+    @include breakpoint($large) {
+      padding: 48px 100px 66px 100px;
+    }
+
+    &__form {
+      border-bottom: 1px solid #9c1f61;
+      width: 100%;
+      display: flex;
+
+      input {
+        padding: 8px 12px;
+        color: #9c1f61;
+
+        @include breakpoint($large) {
+          padding: 18px 30px;
+        }
+      }
+      
+      input[type='email'] {
+        flex: 1;
+        background: none;
+        border: none;
+        outline: 0;
+        font-family: $compact-sans;
+        font-size: 1.5em;
+        font-weight: 300;
+        letter-spacing: 0.33px;
+        line-height: 24px;
+      }
+
+      input[type='submit'] {
+        flex: 0;
+        background: none;
+        border: none;
+        outline: none;
+        opacity: 0.5;
+        cursor: pointer;
+        transition: opacity 0.13s ease-in-out;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

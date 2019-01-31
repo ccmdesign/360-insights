@@ -10,8 +10,13 @@ $touch: (max-width 64em);
 $medium-up: 40.063em;
 $large: 64.063em;
 
-$sans-serif: neusa-next-std-compact, sans-serif;
+$sans-serif: Arial, sans-serif;
 $serif: Georgia, 'Times New Roman', Times, serif;
+
+$std-sans: neusa-next-std, sans-serif;
+$compact-sans: neusa-next-std-compact, sans-serif;
+$condensed-sans: neusa-next-std-condensed, sans-serif;
+$wide-sans: neusa-next-std-wide, sans-serif;
 
 $main-color: #333;
 
@@ -23,3 +28,4 @@ $main-color: #333;
 @import 'header';
 
 @import 'custom-elements';
+@import 'homepage';

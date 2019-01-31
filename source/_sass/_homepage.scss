@@ -227,4 +227,110 @@
       }
     }
   }
+
+  &__data-selection {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.hidden {
+      display: none;
+      touch-action: none;
+    }
+
+    &__window {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+      @include breakpoint($large) {
+        max-width: 940px;
+        height: auto;
+        max-height: 940px;
+      }
+    }
+
+    &__highlight {
+      text-align: center;
+      color: #9c1f61;
+      font-family: $compact-sans;
+      font-size: 2em;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 8px 0 2px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    &__sets {
+      list-style: none;
+      font-family: $compact-sans;
+      padding: 16px 10px;
+      overflow: auto;
+      max-height: 640px;
+
+      @include breakpoint($large) {
+        padding: 28px 64px;
+      }
+    }
+
+    &__set:not(:last-child) {
+      border-bottom: 1px solid #9c1f61;
+      margin-bottom: 12px;
+    }
+
+    &__set-name {
+      color: rgba(11, 40, 51, 0.6);
+      font-size: 1.5em;
+      font-weight: 300;
+      line-height: 24px;
+    }
+
+    &__data-list {
+      list-style: none;
+      
+      &__item {
+        cursor: pointer;
+        padding-top: 8px;
+        padding-bottom: 4px;
+
+        ul {
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+          color: rgba(11, 40, 51, 0.6);
+          text-decoration: none;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 16px;
+        }
+
+        &__data-fixed, &__data-notfixed {
+          &:not(:last-child) {
+            padding-right: 24px;
+          }
+        }
+
+        &__data-fixed {
+          flex: 1;
+        }
+
+        &__data-notfixed {
+          display: none;
+          font-size: 0.75em;
+          font-weight: 400;
+
+          @include breakpoint($large) {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
 }

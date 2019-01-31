@@ -12,8 +12,8 @@
     font-weight: 300;
 
     @include breakpoint($large) {
-      background-size: 35%;
-      background-position: right 45%;
+      background-size: 45%;
+      background-position: right 55%;
       padding-right: 33%;
       padding-bottom: 186px;
     }

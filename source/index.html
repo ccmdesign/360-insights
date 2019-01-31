@@ -2,25 +2,30 @@
 layout: default
 title: Boilerplate
 ---
-<div class="homepage__data-selection hidden">
+<div class="homepage__data-selection js-homepage-dataset-selection-window">
   <div class="homepage__data-selection__window">
     <div class="homepage__data-selection__highlight">
       Datasets
+      <div class="close-button js-homepage-dataset-selection-window-close"></div>
     </div>
     <ul class="homepage__data-selection__sets">
-      <li class="homepage__data-selection__set">
-        <h4 class="homepage__data-selection__set-name">Set name</h4>
-        <ul class="homepage__data-selection__data-list">
-          <li class="homepage__data-selection__data-list__item">
-            <ul>
-              <li class="homepage__data-selection__data-list__item__data-fixed">Data name</li>
-              <li class="homepage__data-selection__data-list__item__data-notfixed">x Records</li>
-              <li class="homepage__data-selection__data-list__item__data-notfixed">Date range</li>
-              <li class="homepage__data-selection__data-list__item__data-notfixed">Amount</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      {% for dataset in site.data.datasets %}
+        <li class="homepage__data-selection__set">
+          <h4 class="homepage__data-selection__set-name">{{ dataset.title }}</h4>
+          <ul class="homepage__data-selection__data-list">
+            {% for data in dataset.content %}
+              <li class="homepage__data-selection__data-list__item">
+                <ul>
+                  <li class="homepage__data-selection__data-list__item__data-fixed">{{ data.name }}</li>
+                  <li class="homepage__data-selection__data-list__item__data-notfixed">{{ data.records }} Records</li>
+                  <li class="homepage__data-selection__data-list__item__data-notfixed">{{ data.dateRange }}</li>
+                  <li class="homepage__data-selection__data-list__item__data-notfixed">{{ data.amount }}</li>
+                </ul>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
     </ul>
   </div>
 </div>
@@ -40,7 +45,7 @@ title: Boilerplate
       Select one of our datasets<br />or upload a file that meets the 360Giving Standard.
     </p>
     <div class="homepage__file-selection__zone">
-      <button>Choose a dataset</button>
+      <button class="js-choose-dataset-btn">Choose a dataset</button>
       <form class="homepage__file-selection__drop">
         <input type="file" name="datasetFile" placeholder="Upload a file" />
       </form>

@@ -1,0 +1,27 @@
+<div class="homepage__data-selection hidden js-homepage-dataset-selection-window">
+  <div class="homepage__data-selection__window">
+    <div class="homepage__data-selection__highlight">
+      Datasets
+      <div class="close-button js-homepage-dataset-selection-window-close"></div>
+    </div>
+    <ul class="homepage__data-selection__sets">
+      {% for dataset in site.data.datasets %}
+        <li class="homepage__data-selection__set">
+          <h4 class="homepage__data-selection__set-name">{{ dataset.title }}</h4>
+          <ul class="homepage__data-selection__data-list">
+            {% for data in dataset.content %}
+              <li class="homepage__data-selection__data-list__item">
+                <ul>
+                  <li class="homepage__data-selection__data-list__item__data-fixed">{{ data.name }}</li>
+                  <li class="homepage__data-selection__data-list__item__data-notfixed">{{ data.records }} Records</li>
+                  <li class="homepage__data-selection__data-list__item__data-notfixed">{{ data.dateRange }}</li>
+                  <li class="homepage__data-selection__data-list__item__data-notfixed">{{ data.amount }}</li>
+                </ul>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

@@ -3,6 +3,8 @@
 
 @import 'breakpoint';
 
+$app-large-width: 960px;
+
 // Breakpoints
 $small-only: (max-width 40em);
 $medium: 40.063em 64em;

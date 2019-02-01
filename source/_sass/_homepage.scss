@@ -14,7 +14,7 @@
     @include breakpoint($large) {
       background-size: 45%;
       background-position: right 55%;
-      padding-right: (960px * 0.52);
+      padding-right: ($app-large-width * 0.52);
       padding-bottom: 186px;
     }
 

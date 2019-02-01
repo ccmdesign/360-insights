@@ -14,7 +14,7 @@
     @include breakpoint($large) {
       background-size: 45%;
       background-position: right 55%;
-      padding-right: 33%;
+      padding-right: (960px * 0.52);
       padding-bottom: 186px;
     }
 
@@ -444,7 +444,16 @@
       background-repeat: no-repeat;
       background-size: 25%;
       background-position: center 16.67%;
-      padding: 54px 134px;
+      padding: 6px 8px;
+
+      &.highlight {
+        border: 1px solid rgba(31, 156, 90, 0.2);
+        background-color: rgba(31, 156, 90, 0.05);
+      }
+
+      @include breakpoint($large) {
+        padding: 54px 134px;
+      }
 
       h4 {
         font-family: $compact-sans;

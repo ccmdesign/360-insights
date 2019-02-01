@@ -2,6 +2,8 @@
 layout: default
 title: Boilerplate
 ---
+{% include _loader.html %}
+
 <div class="homepage__data-selection hidden js-homepage-dataset-selection-window">
   <div class="homepage__data-selection__window">
     <div class="homepage__data-selection__highlight">
@@ -36,7 +38,7 @@ title: Boilerplate
         Upload Data
         <div class="close-button js-homepage-dataset-upload-window-close"></div>
       </div>
-      <div class="homepage__data-selection__upload-drop">
+      <div class="homepage__data-selection__upload-drop highlight">
         <h4>
           Drop your file here
         </h4>
@@ -45,7 +47,7 @@ title: Boilerplate
         </p>
       </div>
       <div class="homepage__data-selection__upload-wrapper">
-        <button class="homepage__data-selection__upload-button">Upload file</button>
+        <button class="homepage__data-selection__upload-button js-dataset-upload">Upload file</button>
       </div>
     </div>
   </div>

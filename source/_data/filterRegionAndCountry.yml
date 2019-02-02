@@ -1,0 +1,27 @@
+- name: "England - East of England"
+  amount: 3
+  id: "england-east"
+
+- name: "England - London"
+  amount: 32
+  id: "england-london"
+
+- name: "England - North West"
+  amount: 4
+  id: "england-north-west"
+
+- name: "England - South East"
+  amount: 5
+  id: "england-south-east"
+
+- name: "England - West Midlands"
+  amount: 672
+  id: "england-west-midlands"
+
+- name: "Scotland"
+  amount: 3
+  id: "scotland"
+
+- name: "Unknown"
+  amount: 385
+  id: "unknown"

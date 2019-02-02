@@ -53,6 +53,9 @@ chooseDataSetCloseButton.addEventListener('click', () => {
 for (const option of chooseDataSetOptions) {
   option.addEventListener('click', () => {
     utils.setPageLoading(true)
+    setTimeout(() => {
+      window.location.href = `${window.location.origin}/results.html`
+    }, 1500)
   })
 }
 
@@ -80,4 +83,7 @@ uploadDataSetCloseButton.addEventListener('click', () => {
 })
 uploadDataConfirmButton.addEventListener('click', () => {
   utils.setPageLoading(true)
+  setTimeout(() => {
+    window.location.href = `${window.location.origin}/results.html`
+  }, 1500)
 })

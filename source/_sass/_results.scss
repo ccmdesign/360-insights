@@ -1,0 +1,137 @@
+.results-page {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-flow: column;
+
+  &__header {
+    background-color: rgba(11, 40, 51, 0.05);
+    color: #0b2833;
+    font-family: $compact-sans;
+    font-size: 1.375em;
+    font-weight: 400;
+    line-height: 48px;
+    padding-top: 5px;
+  }
+
+  &__app {
+    flex-grow: 1;
+    display: flex;
+  }
+
+  &__menu {
+    flex: 27%;
+    background-color: #0b2833;
+    overflow: auto;
+    text-align: right;
+    padding: 24px 64px 24px 0;
+    color: #ffffff;
+
+    &__back {
+      color: rgba(255, 255, 255, 0.4);
+      font-family: $compact-sans;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      line-height: 16px;
+
+      i {
+        font-size: 0.75rem;
+      }
+    }
+
+    &__section-title {
+      font-family: $compact-sans;
+      font-size: 2em;
+      font-weight: 400;
+      letter-spacing: 1px;
+      line-height: 32px;
+      text-transform: uppercase;
+      margin: 46px 0 8px 0;
+    }
+
+    &__subsection {
+      padding: 18px 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      &-title {
+        font-family: $compact-sans;
+        font-size: 1.5em;
+        font-weight: 400;
+        letter-spacing: 0.75px;
+        line-height: 32px;
+        margin: 0;
+      }
+
+      &-value {
+        color: rgba(255, 255, 255, 0.4);
+        font-family: $compact-sans;
+        font-size: 0.75em;
+        font-weight: 300;
+        letter-spacing: 0.38px;
+        line-height: 16px;
+        margin: 0;
+      }
+    }
+
+    &__checkbox {
+      font-family: $compact-sans;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      line-height: 16px;
+      color: rgba(255, 255, 255, 0.4);
+
+      li {
+        position: relative;
+        padding: 7px 0;
+      }
+
+      label {
+        cursor: pointer;
+        user-select: none;
+
+        &::after {
+          position: absolute;
+          font-family: 'Material Icons';
+          font-weight: normal;
+          font-style: normal;
+          font-size: 1em;
+          line-height: 1;
+          letter-spacing: normal;
+          text-transform: none;
+          display: inline-block;
+          white-space: nowrap;
+          word-wrap: normal;
+          direction: ltr;
+          -webkit-font-feature-settings: 'liga';
+          -webkit-font-smoothing: antialiased;
+          content: 'add';
+          width: 1em;
+          height: 1em;
+          top: 7px;
+          right: -32px;
+        }
+      }
+
+      input[type='checkbox']:checked + label {
+        color: #f4831f;
+
+        &::after {
+          content: 'remove';
+        }
+      }
+
+      input[type='checkbox'] {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__body {
+    flex: 73%;
+    overflow: auto;
+  }
+}

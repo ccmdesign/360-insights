@@ -1,0 +1,39 @@
+---
+layout: resultsLayout
+title: Boilerplate
+---
+<div class="results-page">
+  <div class="results-page__header">
+    <div class="wrapper">360Giving <span style="color:#9c1f61;">Insights</span> <span style="color:rgba(11, 40, 51, 0.3);">Beta</span></div>
+  </div>
+  <div class="results-page__app">
+    <aside class="results-page__menu">
+      <a class="results-page__menu__back" href="/index.html" title="Go back to homepage">
+        <i class="material-icons">arrow_back</i> Select another dataset
+      </a>
+      <h3 class="results-page__menu__section-title">Filters</h3>
+      <form id="filters-form">
+        <div class="results-page__menu__subsection">
+          <h4 class="results-page__menu__subsection-title">Region &amp; Country</h4>
+          <h5 class="results-page__menu__subsection-value">Multiple</h5>
+          <ul class="results-page__menu__checkbox">
+            {% for item in site.data.filterRegionAndCountry %}
+              <li>
+                <input type="checkbox" id="regionAndCountry-{{ item.id }}" name="regionAndCountry-{{ item.id }}" value="regionAndCountry-{{ item.id }}" />
+                <label for="regionAndCountry-{{ item.id }}">
+                  {{ item.name }} ({{ item.amount }})
+                </label>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="results-page__menu__subsection">
+          <h4 class="results-page__menu__subsection-title">Organization Type</h4>
+        </div>
+      </form>
+    </aside>
+    <div class="results-page__body">
+      
+    </div>
+  </div>
+</div>

@@ -14,9 +14,9 @@ title: Boilerplate
       <h3 class="results-page__menu__section-title">Filters</h3>
       <form id="filters-form">
         <div class="results-page__menu__subsection">
-          <h4 class="results-page__menu__subsection-title">Region &amp; Country</h4>
+          <h4 class="results-page__menu__subsection-title js-foldable js-foldable-aim-1 js-foldable-more">Region &amp; Country</h4>
           <h5 class="results-page__menu__subsection-value">Multiple</h5>
-          <ul class="results-page__menu__checkbox">
+          <ul class="results-page__menu__checkbox js-foldable-target js-foldable-target-1">
             {% for item in site.data.filterRegionAndCountry %}
               <li>
                 <input type="checkbox" id="regionAndCountry-{{ item.id }}" name="regionAndCountry-{{ item.id }}" value="regionAndCountry-{{ item.id }}" />

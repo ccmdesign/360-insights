@@ -57,12 +57,47 @@
       }
 
       &-title {
+        position: relative;
         font-family: $compact-sans;
         font-size: 1.5em;
         font-weight: 400;
         letter-spacing: 0.75px;
         line-height: 32px;
+        cursor: pointer;
         margin: 0;
+
+        &.js-foldable {
+          user-select: none;
+        }
+
+        &.js-foldable::after {
+          position: absolute;
+          font-family: 'Material Icons';
+          font-weight: normal;
+          font-style: normal;
+          font-size: 1em;
+          line-height: 1;
+          letter-spacing: normal;
+          text-transform: none;
+          white-space: nowrap;
+          word-wrap: normal;
+          direction: ltr;
+          -webkit-font-feature-settings: 'liga';
+          -webkit-font-smoothing: antialiased;
+          color: #f4831f;
+          width: 1em;
+          height: 1em;
+          top: 2px;
+          right: -36px;
+        }
+
+        &.js-foldable-more::after {
+          content: 'unfold_more';
+        }
+
+        &.js-foldable-less::after {
+          content: 'unfold_less';
+        }
       }
 
       &-value {
@@ -101,7 +136,6 @@
           line-height: 1;
           letter-spacing: normal;
           text-transform: none;
-          display: inline-block;
           white-space: nowrap;
           word-wrap: normal;
           direction: ltr;
@@ -133,5 +167,16 @@
   &__body {
     flex: 73%;
     overflow: auto;
+  }
+}
+
+.js-foldable-target {
+  transition: height 0.23s ease-in-out, max-height 0.23s ease-in-out, opacity 0.23s ease-in-out;
+
+  &.js-foldable-foldTarget {
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0 !important;
+    overflow: hidden;
   }
 }

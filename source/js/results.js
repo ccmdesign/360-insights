@@ -65,7 +65,6 @@ function createRangeSelectorUpdater (inputs) {
   let highest = getHighestRangeValue(inputs)
   return (event) => {
     const isChecked = event.target.checked
-    console.log(isChecked)
     const targetValue = parseInt(event.target.value)
     if (isChecked) {
       lowest = getLowestRangeValue(inputs)
@@ -144,3 +143,102 @@ for (const rangeSelector of rangeSelectors) {
     }
   }
 }
+
+// Results - Navigation Title
+const resultsHeader = document.getElementsByClassName('results-page__header')[0]
+const resultsBodyElement = document.getElementsByClassName('results-page__body')[0]
+const resultsBodyHeader = document.getElementsByClassName('results-page__body__header')[0]
+const resultsBodyHeaderTitle = document.getElementsByClassName('results-page__body__header__title')[0]
+const resultsBodyTitle = document.getElementsByClassName('results-page__body__content__title')[0]
+const resultsBodyTitleYMax = (resultsBodyTitle.getBoundingClientRect().height + resultsHeader.getBoundingClientRect().height) - 44
+
+function buildTitleScrollExecutor (noMoreComplete, onComplete, onProgress, onEnter, onLeave) {
+  const primaryBounds = resultsBodyTitle.getBoundingClientRect()
+  const secondaryBounds = resultsBodyHeaderTitle.getBoundingClientRect()
+  const initial = {
+    deltaX: primaryBounds.left - secondaryBounds.left,
+    deltaY: primaryBounds.top - secondaryBounds.top,
+    deltaW: primaryBounds.width / secondaryBounds.width,
+    deltaH: primaryBounds.height / secondaryBounds.height
+  }
+  const calc = (i, f) => {
+    const j = 1 + i - (i * f)
+    if (j > i) {
+      onLeave()
+      return i
+    } else {
+      onEnter()
+      return j
+    }
+  }
+  let last = initial
+  let completed = false
+  return (progressFactor) => {
+    if (progressFactor >= 1) {
+      if (completed) {
+        return
+      }
+      completed = true
+      onComplete()
+    } else if (completed) {
+      noMoreComplete()
+      completed = false
+    }
+    onProgress(progressFactor)
+    const deltas = {
+      deltaX: calc(initial.deltaX, progressFactor),
+      deltaY: calc(initial.deltaY, progressFactor),
+      deltaW: calc(initial.deltaW, progressFactor),
+      deltaH: calc(initial.deltaH, progressFactor)
+    }
+    window.requestAnimationFrame(() => {
+      resultsBodyHeaderTitle.animate([{
+        transformOrigin: 'top left',
+        transform: `
+          translate(${last.deltaX}px, ${last.deltaY}px)
+          scale(${last.deltaW}, ${last.deltaH})
+        `
+      }, {
+        transformOrigin: 'top left',
+        transform: `
+          translate(${deltas.deltaX}px, ${deltas.deltaY}px)
+          scale(${deltas.deltaW}, ${deltas.deltaH})
+        `
+      }], {
+        duration: 230,
+        easing: 'cubic-bezier(0.4, 0.0, 0.2, 1)',
+        fill: 'both'
+      })
+      last = deltas
+    })
+  }
+}
+
+const titleExecutor = buildTitleScrollExecutor(
+  () => (resultsBodyHeaderTitle.style.fontWeight = 300),
+  () => (resultsBodyHeaderTitle.style.fontWeight = 400),
+  (progress) => (resultsBodyHeader.style.opacity = progress),
+  () => {
+    resultsBodyHeaderTitle.style.opacity = 1
+    resultsBodyTitle.style.opacity = 0
+  },
+  () => {
+    resultsBodyTitle.style.opacity = 1
+    resultsBodyHeaderTitle.style.opacity = 0
+  }
+)
+
+let scrollUpdater = null
+resultsBodyElement.addEventListener('scroll', (event) => {
+  const f = (scrollTop) => titleExecutor(scrollTop >= resultsBodyTitleYMax ? 1 : scrollTop / resultsBodyTitleYMax)
+  f(event.target.scrollTop)
+  scrollUpdater = setTimeout(() => {
+    if (scrollUpdater !== null) {
+      clearTimeout(scrollUpdater)
+      scrollUpdater = null
+    }
+    f(event.target.scrollTop)
+  }, 100)
+})
+
+titleExecutor(0)

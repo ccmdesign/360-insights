@@ -268,6 +268,7 @@
   }
 
   &__body {
+    position: relative;
     flex: 73%;
     overflow: auto;
 
@@ -281,6 +282,71 @@
       margin: 32px 0 8px 0;
     }
 
+    &__header {
+      position: fixed;
+      width: 100%;
+
+      &__top {
+        width: 100%;
+        color: #808285;
+        font-family: $wide-sans;
+        font-weight: 300;
+        line-height: 24px;
+        box-shadow: 0 2px 4px rgba(2, 2, 8, 0.15);
+        background-color: #ffffff;
+        padding: 20px 100px 12px 100px;
+      }
+
+      &__bottom {
+        background-color: #f2f2f2;
+        box-shadow: inset 0 2px 4px rgba(2, 2, 8, 0.15);
+        padding: 20px 100px 12px 100px;
+        font-family: $compact-sans;
+        font-weight: 400;
+        line-height: 16px;
+
+        &__datalist {
+          list-style: none;
+          padding: 0;
+
+          li {
+            display: inline-block;
+
+            &:nth-child(1) {
+              color: #9c1f61;
+              padding-right: 70px;
+            }
+  
+            &:nth-child(2) {
+              color: #f4831f;
+              padding-right: 70px;
+            }
+  
+            &:nth-child(3) {
+              color: #50aae4;
+            }
+          }
+        }
+      }
+
+      &__title {
+        display: inline-block;
+        color: #9c1f61;
+        font-family: $compact-sans;
+        font-size: 1.5em;
+        font-weight: 300;
+        line-height: 24px;
+      }
+
+      &__date {
+        color: #f4831f;
+        font-family: $compact-sans;
+        font-size: 1.5em;
+        font-weight: 400;
+        line-height: 24px;
+      }
+    }
+
     &__content {
       padding: 60px 100px;
 
@@ -291,24 +357,29 @@
         line-height: 16px;
       }
 
+      &__header {
+        color: #808285;
+        font-family: $wide-sans;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 16px;
+      }
+
       &__title {
+        display: inline-block;
         color: #9c1f61;
         font-family: $compact-sans;
         font-size: 3em;
         font-weight: 300;
         line-height: 48px;
+      }
 
-        .between {
-          color: #808285;
-          font-family: $wide-sans;
-          font-size: 1rem;
-          font-weight: 300;
-          line-height: 16px;
-        }
-
-        .date {
-          color: #f4831f;
-        }
+      &__date {
+        color: #f4831f;
+        font-family: $compact-sans;
+        font-size: 3em;
+        font-weight: 300;
+        line-height: 48px;
       }
 
       &__spheres {

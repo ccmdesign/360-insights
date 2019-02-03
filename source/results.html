@@ -15,20 +15,48 @@ title: Boilerplate
       <form id="filters-form">
         <div class="results-page__menu__subsection">
           <h4 class="results-page__menu__subsection-title js-foldable js-foldable-aim-1 js-foldable-more">Region &amp; Country</h4>
-          <h5 class="results-page__menu__subsection-value">Multiple</h5>
-          <ul class="results-page__menu__checkbox js-foldable-target js-foldable-target-1">
-            {% for item in site.data.filterRegionAndCountry %}
-              <li>
-                <input type="checkbox" id="regionAndCountry-{{ item.id }}" name="regionAndCountry-{{ item.id }}" value="regionAndCountry-{{ item.id }}" />
-                <label for="regionAndCountry-{{ item.id }}">
-                  {{ item.name }} ({{ item.amount }})
-                </label>
-              </li>
-            {% endfor %}
-          </ul>
+          <h5 class="results-page__menu__subsection-value js-foldable-target js-folgable-opposite-target js-foldable-target-1">Multiple</h5>
+          <fieldset class="js-foldable-target js-foldable-target-1">
+            <ul class="results-page__menu__checkbox">
+              {% for item in site.data.filterRegionAndCountry %}
+                <li>
+                  <input id="regionAndCountry-{{ item.id }}" type="checkbox" name="regionAndCountry" value="{{ item.id }}" {% if item.checked == true %}checked{% endif %} />
+                  <label for="regionAndCountry-{{ item.id }}">
+                    {{ item.name }} ({{ item.amount }})
+                  </label>
+                </li>
+              {% endfor %}
+            </ul>
+          </fieldset>
         </div>
         <div class="results-page__menu__subsection">
-          <h4 class="results-page__menu__subsection-title">Organization Type</h4>
+          <h4 class="results-page__menu__subsection-title js-foldable js-foldable-aim-2 js-foldable-more">Funders</h4>
+          <h5 class="results-page__menu__subsection-value js-foldable-target js-folgable-opposite-target js-foldable-target-2">Arcadia</h5>
+          <div class="results-page__menu__select-list__wrapper js-foldable-target js-foldable-target-2">
+            <select id="funders" name="funders" class="results-page__menu__select-list">
+              {% for item in site.data.filterFunders %}
+                <option value="{{ item.value }}">{{ item.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="results-page__menu__subsection">
+          <h4 class="results-page__menu__subsection-title js-foldable js-foldable-aim-3 js-foldable-more">Date Awarded</h4>
+          <h5 class="results-page__menu__subsection-value js-foldable-target js-folgable-opposite-target js-foldable-target-3">From 2014 to 2018</h5>
+          <div class="js-foldable-target js-foldable-target-3" style="text-align:right;">
+            <fieldset style="display:inline-block;">
+              <ul class="results-page__menu__range-select js-range-select-dateAwarded">
+                {% for item in site.data.filterDateAwarded %}
+                  <li>
+                    <input id="dateAwarded-{{ item.id }}" type="checkbox" name="dateAwarded" value="{{ item.value }}" checked {% if item.id == 1 or item.id == 5 %}class="show-label"{% endif %} />
+                    <label for="dateAwarded-{{ item.id }}">
+                      {{ item.name }}
+                    </label>
+                  </li>
+                {% endfor %}
+              </ul>
+            </fieldset>
+          </div>
         </div>
       </form>
     </aside>

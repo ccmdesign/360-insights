@@ -30,11 +30,14 @@
 }
 
 .rc-slider-handle {
-  border: 0px;
+  border: 4px solid #f4831f;
   border-radius: 0;
   margin-top: 0px;
   height: 16px;
-  opacity: 0;
+  opacity: 1;
+  width: 4px;
+  margin-left: 0px;
+  background-color: #f4831f;
 }
 
 .rc-slider-mark-text {

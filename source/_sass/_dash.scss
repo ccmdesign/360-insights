@@ -52,3 +52,8 @@
 .rc-slider-mark-text-active {
   color: #f4831f;
 }
+
+/* Font style for charts */
+.js-plotly-plot .plotly .main-svg {
+  font-family: neusa-next-std-compact, sans-serif;
+}

@@ -5,11 +5,24 @@
       <div class="close-button js-homepage-dataset-upload-window-close"></div>
     </div>
     <div class="homepage__data-selection__upload-drop highlight">
-      <h4>
-        Drop your file here
-      </h4>
+      <div id="upload-data" class="resumable-default">
+        <label>
+          Drop your file here to upload
+          <input type="file" class="btn" name="upload-data-upload" accept=".csv,.xlsx"
+            style="opacity: 0; position: absolute; overflow: hidden;">
+          </label>
+        <div class="progress" style="display: none;">
+          <div class="progress-bar" style="width: 0%; height: 100%;"></div>
+        </div>
+        <label><button class="resumable-btn-start">upload</button></label>
+        <label><button disabled="" class="resumable-btn-pause">pause</button></label>
+        <label><button disabled="" class="resumable-btn-cancel">cancel</button></label>
+      </div>
       <p>
-        <span style="color:#9c1f61;font-weight:400;">Data Privacy Information:</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <span style="color: rgb(156, 31, 97); font-weight: 400;">Data Privacy Information: </span>
+        Any data you upload will be available at the URL created to anyone with the link.
+        You should ensure that no confidential information is present in the data you upload,
+        and that you have the appropriate permissions and licence to upload the data.
       </p>
     </div>
     <div class="homepage__data-selection__upload-wrapper">

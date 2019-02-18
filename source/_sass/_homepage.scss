@@ -348,11 +348,11 @@
       font-family: $compact-sans;
       padding: 16px 10px;
       overflow: auto;
-      max-height: calc(100vh - 3.25em - 10px);
+      max-height: calc(100vh - 3.25em - 78px);
 
       @include breakpoint($large) {
         padding: 28px 64px;
-        max-height: calc(80vh - 3.25em - 10px);
+        max-height: calc(80vh - 3.25em - 78px);
       }
     }
 

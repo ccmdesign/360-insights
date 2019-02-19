@@ -105,7 +105,12 @@
 /* Font style for charts */
 .js-plotly-plot .plotly .main-svg {
   font-family: neusa-next-std-compact, sans-serif;
+  font-weight: 300;
 }
+
+/* Tweaking the SVG here */
+.ytick text, 
+.point > text { font-weight: 300; }
 
 /* form input for homepage */
 

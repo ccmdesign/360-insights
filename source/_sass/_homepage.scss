@@ -6,13 +6,15 @@
     padding-bottom: 558px;
     background-image: url('/images/homepage-header-background.svg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 50%; 
     background-position: 40% 75%;
+    text-align: center;
     font-family: $compact-sans;
     font-weight: 300;
 
     @include breakpoint($large) {
-      background-size: 45%;
+      background-size: 45%; 
+      text-align: inherit;
       background-position: right 55%;
       padding-right: ($app-large-width * 0.52);
       padding-bottom: 186px;

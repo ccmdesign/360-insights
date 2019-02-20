@@ -28,11 +28,26 @@
     color: #ffffff;
 
     &__back {
-      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      color: white;
       font-family: $compact-sans;
       font-weight: 300;
       letter-spacing: 0.5px;
       line-height: 16px;
+
+      i {
+        font-size: 0.75rem;
+      }
+    }
+    &__feedback,
+    &__reset {
+      color: rgba(255, 255, 255, 0.4);
+      font-family: $compact-sans;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      line-height: 18px;
+      margin-bottom: 6px;
 
       i {
         font-size: 0.75rem;
@@ -50,7 +65,7 @@
     }
 
     &__subsection {
-      padding: 18px 0;
+      padding: 18px 0 18px 36px;
 
       &:not(:last-child) {
         border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -103,7 +118,7 @@
       &-value {
         color: rgba(255, 255, 255, 0.4);
         font-family: $compact-sans;
-        font-size: 0.75em;
+        font-size: 1em;
         font-weight: 300;
         letter-spacing: 0.38px;
         line-height: 16px;
@@ -275,11 +290,20 @@
     &__section-title {
       color: #0b2833;
       font-family: $compact-sans;
-      font-size: 1.5em;
-      font-weight: 400;
+      font-size: 2rem;
+      font-weight: 300;
       letter-spacing: 0.75px;
       line-height: 32px;
       margin: 32px 0 8px 0;
+    }
+
+    &__section-subtitle,
+    &__section-note,
+    &__section-description,
+    &__download li a {
+      font-size: 1.2rem;
+      font-family: neusa-next-std-compact, sans-serif;
+      font-weight: 300;
     }
 
     &__header {

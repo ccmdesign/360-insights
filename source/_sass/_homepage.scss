@@ -6,13 +6,15 @@
     padding-bottom: 558px;
     background-image: url('/images/hero.svg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 50%; 
     background-position: 40% 75%;
+    text-align: center;
     font-family: $compact-sans;
     font-weight: 300;
 
     @include breakpoint($large) {
-      background-size: 45%;
+      background-size: 45%; 
+      text-align: inherit;
       background-position: right 55%;
       padding-right: ($app-large-width * 0.52);
       padding-bottom: 186px;
@@ -348,11 +350,11 @@
       font-family: $compact-sans;
       padding: 16px 10px;
       overflow: auto;
-      max-height: calc(100vh - 3.25em - 10px);
+      max-height: calc(100vh - 3.25em - 78px);
 
       @include breakpoint($large) {
         padding: 28px 64px;
-        max-height: calc(80vh - 3.25em - 10px);
+        max-height: calc(80vh - 3.25em - 78px);
       }
     }
 

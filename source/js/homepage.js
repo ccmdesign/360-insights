@@ -87,3 +87,20 @@ uploadDataConfirmButton.addEventListener('click', () => {
     window.location.href = `${window.location.origin}/results.html`
   }, 1500)
 })
+
+// FETCHING DATASET
+const fetchingDataSetWindow = document.getElementsByClassName('js-homepage-dataset-fetching-window')[0]
+const fetchingDataSetCloseButton = document.getElementsByClassName('js-homepage-dataset-fetching-window-close')[0]
+fetchingDataSetWindow.addEventListener('click', (e) => {
+  if (e.target.classList.contains('js-homepage-dataset-upload-window') &&
+    !uploadDataSetWindow.classList.contains('hidden')) {
+    uploadDataSetWindow.classList.add('hidden')
+    utils.lockBody(false)
+  }
+})
+fetchingDataSetCloseButton.addEventListener('click', () => {
+  if (!fetchingDataSetWindow.classList.contains('hidden')) {
+    fetchingDataSetWindow.classList.add('hidden')
+    utils.lockBody(false)
+  }
+})

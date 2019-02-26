@@ -1,0 +1,141 @@
+.about {
+  &__header {
+    @extend .wrapper;
+    padding-top: 34px;
+    padding-bottom: 48px;
+    font-family: $compact-sans;
+    font-weight: 300;
+
+    h1 {
+      font-size: 3em;
+      font-weight: 300;
+      margin: 80px 25px 16px 25px;
+
+      @include breakpoint($large) {
+        font-size: 4em;
+        margin: 80px 0 16px 0;
+      }
+    }
+
+    p {
+      font-size: 1.5em;
+      font-weight: 300;
+      line-height: 34px;
+      margin: 0 0 16px 0;
+    }
+
+    a {
+      color: #9c1f61;
+      
+      &:hover {
+        color: lighten(#9c1f61, 5);
+        text-decoration: underline;
+      }
+    }
+
+    @include breakpoint($large) {
+      .about__column + .about__column {
+        margin-left: 80px !important;
+      }
+    }
+  }
+
+  &__columns {
+    @extend .wrapper;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+  
+    @include breakpoint($large) {
+      flex-direction: row;
+      padding: 0;
+
+      .about__column + .about__column {
+        margin-left: 48px;
+      }
+    }
+  }
+
+  &__column {
+    flex: 1;
+    color: #0b2833;
+
+    &--large {
+      flex: 2;
+    }
+  }
+
+  &__section {
+    font-family: $compact-sans;
+    padding: 64px 0;
+
+    &--gray {
+      background-color: #f2f4f4;
+    }
+
+    h2 {
+      color: #9c1f61;
+      font-size: 2.375em;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin: 0 0 16px 0;
+    }
+
+    p {
+      font-size: 1.25em;
+      font-weight: 300;
+      line-height: 28px;
+      margin: 0 0 16px 0;
+
+      &.strong {
+        font-weight: 400;
+      }
+
+      &.warning {
+        color: #f4831f;
+        font-weight: 400;
+      }
+
+      &.headless {
+        padding-top: calc(1.4em + 16px);
+      }
+    }
+  }
+
+  &__take-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 24px;
+
+    @include breakpoint($large) {
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding-bottom: 0;
+    }
+
+    &__button {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background-color: #9c1f61;
+      color: #ffffff;
+      font-family: $compact-sans;
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.33px;
+      line-height: 24px;
+      padding: 12px 18px 8px 18px;
+      cursor: pointer;
+
+      @include breakpoint($large) {
+        width: auto;
+      }
+
+      &:hover {
+        background-color: lighten(#9c1f61, 5);
+        text-decoration: none;
+      }
+    }
+  }
+}
